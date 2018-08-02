@@ -1,0 +1,45 @@
+{
+  "name": "@titan-suite/aion-to-graphql",
+  "version": "0.0.3",
+  "description": "Create a graphql server to AION smart contracts",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "nodemon server.js  --exec babel-node",
+    "test": "mocha test/aion.test.js --require babel-polyfill --require babel-register",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/titan-suite/Aion-to-GraphQL"
+  },
+  "keywords": [
+    "Node.js",
+    "Javascript",
+    "GraphQL",
+    "Web3",
+    "Apollo",
+    "Aion"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/titan-suite/Aion-to-GraphQL/issues"
+  },
+  "homepage": "https://github.com/titan-suite/Aion-to-GraphQL#readme",
+  "dependencies": {
+    "aion-web3": "^0.0.3",
+    "apollo-server": "^2.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint-plugin-babel": "^5.1.0",
+    "graphql": "^0.13.2",
+    "mocha": "^5.2.0",
+    "solc": "^0.4.24"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "eslint": "^5.2.0",
+    "nodemon": "^1.9.1"
+  }
+}
