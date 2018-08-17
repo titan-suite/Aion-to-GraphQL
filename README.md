@@ -1,4 +1,4 @@
-# AION ABI to GraphQL Scheme
+# AION ABI to GraphQL Schema
 
 This will consume an ABI object created when deploying a Solidity Smart contract, and return a graphql schema and resolver. This object can be plugged into a the graphql server of your choice.
 
