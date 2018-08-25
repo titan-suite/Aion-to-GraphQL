@@ -17,6 +17,7 @@ const mainAccount = web3.personal.listAccounts[0]
 let schema, rootValue
 global.mainAccount = mainAccount
 global.gas = 1500000
+global.web3 = web3
 
 const deployContract = async () => {
   const {
@@ -59,7 +60,6 @@ describe('Test All functions', async () => {
       }
     `
     const result = await graphql(schema, query, rootValue)
-    console.dir(result.data)
     expect(result.data.num['uint128_0']['int']).to.equal(5)
   }).timeout(0)
 
@@ -70,7 +70,6 @@ describe('Test All functions', async () => {
     }
   `
     const result = await graphql(schema, mutation, rootValue)
-    console.log(result)
     expect(result.data['setA']).to.be.true
   }).timeout(0)
 
@@ -85,7 +84,6 @@ describe('Test All functions', async () => {
     }
   `
     const result = await graphql(schema, query, rootValue)
-    console.dir(result)
     expect(result.data['add']['uint128_0']['int']).to.equal(120)
   }).timeout(0)
 })
