@@ -17,7 +17,6 @@ const mainAccount = web3.personal.listAccounts[0]
 let schema, rootValue
 global.mainAccount = mainAccount
 global.gas = 1500000
-global.web3 = web3
 
 const deployContract = async () => {
   const {

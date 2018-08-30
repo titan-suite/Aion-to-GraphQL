@@ -2,3 +2,4 @@ node_modules/*
 .ds_store
 build/*
 config.js
+titanrc.js

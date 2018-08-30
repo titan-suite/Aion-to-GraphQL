@@ -9,7 +9,6 @@ const web3 = new Web3(new Web3.providers.HttpProvider(web3Address))
 const mainAccount = web3.personal.listAccounts[0]
 global.mainAccount = mainAccount
 global.gas = 1500000
-global.web3 = web3
 const ExampleContract = fs.readFileSync(
   path.resolve(__dirname, 'contracts', 'Example.sol'),
   'utf8'
