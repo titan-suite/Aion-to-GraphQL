@@ -1,6 +1,6 @@
 {
   "name": "@titan-suite/aion-to-graphql",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "Create a graphql server to AION smart contracts",
   "main": "lib/index.js",
   "scripts": {
