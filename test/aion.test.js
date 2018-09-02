@@ -62,17 +62,14 @@ describe('Test All functions', async () => {
     expect(result.data.num['uint128_0']['int']).to.equal(5)
   }).timeout(0)
 
-  it('should succesfully set the value to 100', async () => {
+  it('should succesfully set the value to 100 add expect 120 by adding 20 to num', async () => {
     const mutation = `
     mutation{
-      setA(a:100)
+      setA(a:100){
+        blockNumber
+      }
     }
   `
-    const result = await graphql(schema, mutation, rootValue)
-    expect(result.data['setA']).to.be.true
-  }).timeout(0)
-
-  it('should succesfully add 20 to the num and expect 120', async () => {
     const query = `
     query {
       add(a:20) {
@@ -82,6 +79,8 @@ describe('Test All functions', async () => {
       }
     }
   `
+
+    console.dir(await graphql(schema, mutation, rootValue))
     const result = await graphql(schema, query, rootValue)
     expect(result.data['add']['uint128_0']['int']).to.equal(120)
   }).timeout(0)
