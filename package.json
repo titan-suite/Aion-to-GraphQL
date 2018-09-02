@@ -1,6 +1,6 @@
 {
   "name": "@titan-suite/aion-to-graphql",
-  "version": "0.0.11",
+  "version": "0.0.13",
   "description": "Create a graphql server to AION smart contracts",
   "main": "lib/index.js",
   "scripts": {
@@ -32,14 +32,14 @@
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
-    "eslint-plugin-babel": "^5.1.0",
-    "graphql": "^14.0.0",
+    "graphql": "^0.13.0",
     "mocha": "^5.2.0",
     "solc": "^0.4.24"
   },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
     "eslint": "^5.5.0",
+    "eslint-plugin-babel": "^5.1.0",
     "nodemon": "^1.18.4"
   }
 }

@@ -14,9 +14,8 @@ const ExampleContract = fs.readFileSync(
 )
 const web3 = new Web3(new Web3.providers.HttpProvider(web3Address))
 const mainAccount = web3.personal.listAccounts[0]
+const gas = 1500000
 let schema, rootValue
-global.mainAccount = mainAccount
-global.gas = 1500000
 
 const deployContract = async () => {
   const {
@@ -29,14 +28,15 @@ const deployContract = async () => {
     web3,
     contractArguments: ''
   })
-  global.mainAccount = mainAccount
   console.log('deployed at ' + address)
 
   return await genGraphQlProperties({
     artifact: {
       abi
     },
-    contract: web3.eth.contract(abi).at(address)
+    contract: web3.eth.contract(abi).at(address),
+    mainAccount,
+    gas
   })
 }
 describe('Contract Deployment', async () => {

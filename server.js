@@ -7,8 +7,7 @@ const fs = require('fs')
 const { mainAccountPass, web3Address } = require('./config')
 const web3 = new Web3(new Web3.providers.HttpProvider(web3Address))
 const mainAccount = web3.personal.listAccounts[0]
-global.mainAccount = mainAccount
-global.gas = 1500000
+const gas = 1500000
 const ExampleContract = fs.readFileSync(
   path.resolve(__dirname, 'contracts', 'Example.sol'),
   'utf8'
@@ -85,7 +84,9 @@ const startServer = async () => {
       artifact: {
         abi
       },
-      contract: web3.eth.contract(abi).at(address)
+      contract: web3.eth.contract(abi).at(address),
+      mainAccount,
+      gas
     })
     const server = new ApolloServer({ schema, rootValue })
     server.listen({ port: 5001 }).then(({ url }) => {

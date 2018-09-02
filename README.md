@@ -16,9 +16,9 @@ Install the package with npm or yarn.
 
 1.  Once installed,You will also have to specify global.mainAccount and global.gas to withdraw gas from.
 
-2.  You can now create your own graphql server. This means you pass in the Abi and contract instance.
+2.  You can now create your own graphql server. This means you pass in the Abi , contract instance, Main Account, Gas.
     Example:
-    `{ artifact: abi, contract: web3.eth.contract(abi).at(address) }`
+    `{ artifact: abi, contract: web3.eth.contract(abi).at(address), mainAccount: web3.personal.listAccounts[0], gas:1500000 }`
 
 ## Example Usage
 
